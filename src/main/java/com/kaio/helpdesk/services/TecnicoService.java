@@ -1,6 +1,7 @@
 package com.kaio.helpdesk.services;
 
 import com.kaio.helpdesk.domain.Tecnico;
+import com.kaio.helpdesk.dtos.TecnicoDTO;
 import com.kaio.helpdesk.repositories.TecnicoRepository;
 import com.kaio.helpdesk.services.exceptions.ObjectNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,5 +24,12 @@ public class TecnicoService {
 
     public List<Tecnico> findAll() {
         return repository.findAll();
+    }
+
+    public Tecnico create(TecnicoDTO objDTO) {
+        objDTO.setId(null);
+        Tecnico newObj = new Tecnico(objDTO);
+        return repository.save(newObj);
+
     }
 }
