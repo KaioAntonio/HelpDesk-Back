@@ -3,6 +3,7 @@ package com.kaio.helpdesk.domain;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.kaio.helpdesk.domain.enums.Perfil;
 import jakarta.persistence.*;
+import org.hibernate.validator.constraints.br.CPF;
 
 import java.io.Serializable;
 import java.time.LocalDate;
@@ -19,7 +20,6 @@ public abstract class Pessoa implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     protected Integer id;
     protected String nome;
-
     @Column(unique = true)
     protected String cpf;
     @Column(unique = true)
