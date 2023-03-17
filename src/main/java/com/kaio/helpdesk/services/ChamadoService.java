@@ -24,4 +24,5 @@ public class ChamadoService {
     public List<Chamado> findAll() {
         return chamadoRepository.findAll();
     }
+
 }
