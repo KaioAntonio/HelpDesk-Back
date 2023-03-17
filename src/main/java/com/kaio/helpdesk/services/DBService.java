@@ -32,8 +32,21 @@ public class DBService {
         Chamado g1 = new Chamado(null, Prioridade.MEDIA, Status.ABERTO, "Chamado 01",
                 "primeiro chamado", t1, c1);
 
+        Chamado g2 = new Chamado(null, Prioridade.MEDIA, Status.ANDAMENTO, "Chamado 1", "Teste chamado 1", t1, c1);
+        Chamado g3 = new Chamado(null, Prioridade.ALTA, Status.ABERTO, "Chamado 2", "Teste chamado 2",  t1, c1);
+        Chamado g4 = new Chamado(null, Prioridade.BAIXA, Status.ENCERRADO, "Chamado 3", "Teste chamado 3",  t1, c1);
+        Chamado g5 = new Chamado(null, Prioridade.ALTA, Status.ABERTO, "Chamado 4", "Teste chamado 4",  t1, c1);
+        Chamado g6 = new Chamado(null, Prioridade.MEDIA, Status.ANDAMENTO, "Chamado 5", "Teste chamado 5",  t1, c1);
+
+
+
         tecnicoRepository.saveAll(Arrays.asList(t1));
         clienteRepository.saveAll(Arrays.asList(c1));
         chamadoRepository.saveAll(Arrays.asList(g1));
+        chamadoRepository.saveAll(Arrays.asList(g2));
+        chamadoRepository.saveAll(Arrays.asList(g3));
+        chamadoRepository.saveAll(Arrays.asList(g4));
+        chamadoRepository.saveAll(Arrays.asList(g5));
+        chamadoRepository.saveAll(Arrays.asList(g6));
     }
 }
