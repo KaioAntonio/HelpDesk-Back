@@ -3,9 +3,6 @@ package com.kaio.helpdesk.dtos;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.kaio.helpdesk.domain.Tecnico;
 import com.kaio.helpdesk.domain.enums.Perfil;
-import jakarta.persistence.Column;
-import jakarta.persistence.ElementCollection;
-import jakarta.persistence.FetchType;
 import jakarta.validation.constraints.NotNull;
 
 import java.io.Serializable;
@@ -45,6 +42,7 @@ public class TecnicoDTO implements Serializable {
         this.senha = obj.getSenha();
         this.perfis = obj.getPerfis().stream().map(x -> x.getCodigo()).collect(Collectors.toSet());
         this.dataCriacao = obj.getDataCriacao();
+        addPerfil(Perfil.TECNICO);
     }
 
     public Integer getId() {

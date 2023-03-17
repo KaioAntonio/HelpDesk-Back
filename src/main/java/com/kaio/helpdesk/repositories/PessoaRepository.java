@@ -2,7 +2,6 @@ package com.kaio.helpdesk.repositories;
 
 import com.kaio.helpdesk.domain.Pessoa;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
 

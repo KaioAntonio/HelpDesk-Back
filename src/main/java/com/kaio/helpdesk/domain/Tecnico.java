@@ -1,7 +1,6 @@
 package com.kaio.helpdesk.domain;
 
 
-import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.kaio.helpdesk.domain.enums.Perfil;
 import com.kaio.helpdesk.dtos.TecnicoDTO;
