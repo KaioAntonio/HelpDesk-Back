@@ -3,12 +3,12 @@ package com.kaio.helpdesk.resources;
 import com.kaio.helpdesk.domain.Cliente;
 import com.kaio.helpdesk.dtos.ClienteDTO;
 import com.kaio.helpdesk.services.ClienteService;
-import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import javax.validation.Valid;
 import java.net.URI;
 import java.util.List;
 import java.util.stream.Collectors;

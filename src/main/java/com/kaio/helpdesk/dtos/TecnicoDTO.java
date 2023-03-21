@@ -3,8 +3,9 @@ package com.kaio.helpdesk.dtos;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.kaio.helpdesk.domain.Tecnico;
 import com.kaio.helpdesk.domain.enums.Perfil;
-import jakarta.validation.constraints.NotNull;
 
+
+import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.HashSet;

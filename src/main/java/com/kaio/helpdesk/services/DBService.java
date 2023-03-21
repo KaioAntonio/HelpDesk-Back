@@ -10,6 +10,7 @@ import com.kaio.helpdesk.repositories.ChamadoRepository;
 import com.kaio.helpdesk.repositories.ClienteRepository;
 import com.kaio.helpdesk.repositories.TecnicoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.Arrays;
@@ -23,11 +24,13 @@ public class DBService {
     private ClienteRepository clienteRepository;
     @Autowired
     private ChamadoRepository chamadoRepository;
+    @Autowired
+    private BCryptPasswordEncoder encoder;
     public void instaciaDB(){
-        Tecnico t1 = new Tecnico(null, "Kaio", "1234578901","kaio@mail.com", "123");
+        Tecnico t1 = new Tecnico(null, "Kaio", "1234578901","kaio@mail.com", encoder.encode("123"));
         t1.addPerfis(Perfil.ADMIN);
 
-        Cliente c1 = new Cliente(null, "Linux Valdson", "1241231240", "linux@gmail.com", "123");
+        Cliente c1 = new Cliente(null, "Linux Valdson", "1241231240", "linux@gmail.com", encoder.encode("123"));
 
         Chamado g1 = new Chamado(null, Prioridade.MEDIA, Status.ABERTO, "Chamado 01",
                 "primeiro chamado", t1, c1);

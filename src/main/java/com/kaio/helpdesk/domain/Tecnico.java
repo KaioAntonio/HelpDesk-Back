@@ -4,9 +4,10 @@ package com.kaio.helpdesk.domain;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.kaio.helpdesk.domain.enums.Perfil;
 import com.kaio.helpdesk.dtos.TecnicoDTO;
-import jakarta.persistence.Entity;
-import jakarta.persistence.OneToMany;
 
+
+import javax.persistence.Entity;
+import javax.persistence.OneToMany;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
