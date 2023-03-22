@@ -6,6 +6,7 @@ import com.kaio.helpdesk.services.TecnicoService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
@@ -35,6 +36,7 @@ public class TecnicoResource {
 
     }
 
+    @PreAuthorize("hasAnyRole('ADMIN')")
     @PostMapping
     public ResponseEntity<TecnicoDTO> create(@Valid @RequestBody TecnicoDTO objDTO) {
         Tecnico newObg = tecnicoService.create(objDTO);
@@ -42,7 +44,7 @@ public class TecnicoResource {
         return ResponseEntity.created(uri).build();
 
     }
-
+    @PreAuthorize("hasAnyRole('ADMIN')")
     @PutMapping(value = "/{id}")
     public ResponseEntity<TecnicoDTO> update(@PathVariable Integer id,
                                              @Valid @RequestBody TecnicoDTO objDTO) {
@@ -50,7 +52,7 @@ public class TecnicoResource {
         return ResponseEntity.ok().body(new TecnicoDTO(obj));
 
     }
-
+    @PreAuthorize("hasAnyRole('ADMIN')")
     @DeleteMapping(value = "/{id}")
     public ResponseEntity<TecnicoDTO> delete(@PathVariable Integer id){
         tecnicoService.delete(id);
